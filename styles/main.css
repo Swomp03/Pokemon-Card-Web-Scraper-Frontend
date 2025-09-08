@@ -1,0 +1,187 @@
+.websiteTitle {
+    text-align: center;
+    font-size: 5vh;
+    color: white;
+    margin-bottom: 2vh;
+    font-family: 'Arial Black', Gadget, sans-serif;
+}
+
+.mainSection {
+    /* margin-top: 10vh; */
+    padding-top: 5vh;
+    padding-bottom: 2vh;
+    background-color: black;
+    border-bottom-left-radius: 3vh;
+    border-bottom-right-radius: 3vh;
+}
+
+.allButtonSection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    gap: 5vh;
+}
+
+.buttonSection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1vh;
+    margin-right: 1vh;
+    gap: 3vh;
+}
+
+.loadingIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* margin-bottom: 2vh; */
+}
+
+
+.setButton {
+    width: 7%;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all 0.2s ease;
+}
+
+.setButton:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.setButton.selected {
+    opacity: 1;
+    border: 3px solid #468dff;
+    border-radius: 3vh;
+}
+
+.allSetsButton {
+    justify-content: center;
+    margin-bottom: 4vh;
+    border-radius: 3vh;
+    width: 10%;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.allSetsButton:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.allSetsButton.selected {
+    border: 5px solid #468dff;
+    opacity: 1;
+}
+
+
+
+
+
+.setImg {
+    border-radius: 3vh;
+    width: 100%;
+}
+
+.tableSection {
+    margin-top: 2vh;
+    margin-left: 2vh;
+    margin-right: 2vh;
+}
+
+.tcgTable {
+    /* height: 85vh; */
+    overflow-y: auto;
+    padding-bottom: 5vh;
+}
+
+.footerSection {
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    /* margin-top: 1vh; */
+    padding-bottom: 5vh;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin: auto; */
+}
+
+.percentageCell {
+    color: #ffb400;
+    font-weight: bold;
+}
+
+.percentMatchCell {
+    color: #45ff89;
+    font-weight: bold;
+}
+
+.priceCell {
+    color: #468dff;
+    font-weight: bold;
+}
+
+.inStockCell {
+    color: #31c8ff;
+}
+
+.noStockCell {
+    color: gray;
+}
+
+.linkCell {
+    color: #8b5cf6;
+    text-decoration: underline;
+}
+
+.defaultCell {
+    color: white;
+}
+
+.cardRushCell {
+    background-color: #00363f;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.torecaCell {
+    background-color: #051338;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.hareruyaCell {
+    background-color: #2e0a32;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.priceChartingCell {
+    /* background-color: #1a1a1a; */
+    /* font-weight: bold; */
+    text-decoration: underline;
+}
+
+
+.githubIcon {
+    height: 8vh;
+    align-self: center;
+    justify-content: center;
+    margin-top: 5vh;
+    filter: drop-shadow(2vh 2vh 3vh #000000);
+    transition: all 0.2s ease;
+}
+
+.githubIcon:hover {
+    transform: scale(1.3);
+}

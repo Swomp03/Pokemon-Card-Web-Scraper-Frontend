@@ -1,0 +1,5 @@
+.appBackground {
+    background-color: rgb(16, 0, 52) !important;
+    min-height: 100vh;
+    width: 100%;
+}
