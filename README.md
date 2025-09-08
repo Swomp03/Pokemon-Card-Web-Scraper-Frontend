@@ -1,10 +1,15 @@
-# Next.js & HeroUI Template
+# Japanese Pokemon Card Web Scraper Frontend
 
-This is a template for creating applications using Next.js 14 (app directory) and HeroUI (v2).
+This is the frontend for the Pokemon Card Web-Scraper Project using Next.JS/React, C# .NET, Python and other technologies.
+The project gathers different Japanese Pokemon cards from across different Japanese stores and compares them to their market price.
 
-[Try it on CodeSandbox](https://githubbox.com/heroui-inc/heroui/next-app-template)
+Python Web Scraper:
+- https://github.com/Swomp03/Pokemon-Card-Web-Scraper-Python
 
-## Technologies Used
+C# .Net Backend:
+- https://github.com/Swomp03/Pokemon-Card-Web-Scraper-API/tree/master
+
+## Technologies Used for the Front End
 
 - [Next.js 14](https://nextjs.org/docs/getting-started)
 - [HeroUI v2](https://heroui.com/)

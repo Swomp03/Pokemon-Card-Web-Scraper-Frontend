@@ -434,7 +434,7 @@ export default function Home() {
           <p>Last Updated: {formattedDate}</p>
         </div>
 
-        <a href="">
+        <a href="https://github.com/Swomp03/Pokemon-Web-Scraper-Frontend" target="_blank">
           <img src={GithubIcon.src} className="githubIcon" alt="Github Icon" />
         </a>
       </div>
