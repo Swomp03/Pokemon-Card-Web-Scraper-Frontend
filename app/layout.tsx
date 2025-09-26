@@ -10,6 +10,8 @@ import { fontSans } from "@/config/fonts";
 
 import "@/styles/app.css";
 
+const repoBase = process.env.NEXT_PUBLIC_REPO_BASE || '';
+
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
@@ -17,7 +19,7 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   icons: {
-    icon: "/Pokeball.png",
+    icon: `${repoBase}/Pokeball.png`,
     // icon: "/favicon.ico",
   },
 };
@@ -39,6 +41,7 @@ export default function RootLayout({
     <html suppressHydrationWarning lang="en">
       <head />
       <body
+        suppressHydrationWarning
         className={clsx(
           "min-h-screen font-sans antialiased appBackground",
           fontSans.variable,

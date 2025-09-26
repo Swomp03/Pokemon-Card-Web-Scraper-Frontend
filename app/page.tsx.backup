@@ -148,12 +148,10 @@ export default function Home() {
       );
       const data: TCGCard[] = await res.json();
 
-      console.log("Data:", data);
-
-      // for (let i = 0; i < data.length; i++) {
-      //   selectedSets.push(data[i].cardSet);
-      //   console.log("Selected Sets:", selectedSets);
-      // }
+      for (let i = 0; i < data.length; i++) {
+        selectedSets.push(data[i].cardSet);
+        console.log("Selected Sets:", selectedSets);
+      }
 
       setIsLoading(false);
 
@@ -195,12 +193,6 @@ export default function Home() {
         , { signal }
       );
       const data: setButton[] = await res.json();
-
-      for (let i = 0; i < data.length; i++) {
-        selectedSets.push(data[i].setCode);
-        console.log("Selected Sets:", selectedSets);
-      }
-
       return { items: data }; // must return { items: [...] }
     },
   });

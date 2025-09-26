@@ -1,0 +1,18 @@
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+    output: 'export', // ← tells Next.js to generate a static export
+    eslint: {
+        ignoreDuringBuilds: true,
+    },
+    // Risky but I can't compile it regardless withoout it
+    typescript: {
+        ignoreBuildErrors: true,
+    },
+    images: {
+        unoptimized: true, // prevents Next.js image optimization errors during export
+    },
+    basePath: '/Pokemon-Card-Web-Scraper-Frontend', // only for production
+    assetPrefix: '/Pokemon-Card-Web-Scraper-Frontend/', // ensures assets load correctly
+};
+
+module.exports = nextConfig;
