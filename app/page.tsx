@@ -17,6 +17,7 @@ import { Button } from "@heroui/button";
 import { Table, TableHeader, TableBody, TableColumn, TableRow, TableCell, getKeyValue } from "@heroui/table";
 import { Pagination } from "@heroui/pagination";
 import { Spinner } from "@heroui/spinner";
+import { Input } from "@heroui/input";
 
 import "@/styles/main.css";
 
@@ -114,6 +115,9 @@ export default function Home() {
   const rowsPerPage = 20;
 
   const [selectedSets, setSelectedSets] = useState<string[]>([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [minPrice, setMinPrice] = useState("");
+  const [maxPrice, setMaxPrice] = useState("");
 
   const [lastUpdated, setLastUpdated] = useState("");
   const formattedDate = lastUpdated
@@ -250,9 +254,32 @@ export default function Home() {
   }, [setList.items]);
 
   const filteredItems = React.useMemo(() => {
-    if (selectedSets.length === 0) return list.items;
-    return list.items.filter(card => selectedSets.includes(card.cardSet));
-  }, [list.items, selectedSets]);
+    let filtered = list.items;
+
+    // Filter by selected sets
+    if (selectedSets.length > 0) {
+      filtered = filtered.filter(card => selectedSets.includes(card.cardSet));
+    }
+
+    // Filter by search query (card name)
+    if (searchQuery.trim() !== "") {
+      filtered = filtered.filter(card =>
+        card.cardName.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+    }
+
+    // Filter by minimum price
+    if (minPrice !== "" && !isNaN(parseFloat(minPrice))) {
+      filtered = filtered.filter(card => card.marketPrice >= parseFloat(minPrice));
+    }
+
+    // Filter by maximum price
+    if (maxPrice !== "" && !isNaN(parseFloat(maxPrice))) {
+      filtered = filtered.filter(card => card.marketPrice <= parseFloat(maxPrice));
+    }
+
+    return filtered;
+  }, [list.items, selectedSets, searchQuery, minPrice, maxPrice]);
 
   const items = React.useMemo(() => {
     const start = (page - 1) * rowsPerPage;
@@ -303,6 +330,82 @@ export default function Home() {
           </div>
         </div>
 
+      </div>
+
+      <div className="filterSection">
+        <div className="searchBarContainer">
+          <Input
+            type="text"
+            label="Search Card Name"
+            placeholder="Enter card name..."
+            value={searchQuery}
+            onValueChange={(value) => {
+              setSearchQuery(value);
+              setPage(1);
+            }}
+            classNames={{
+              base: "searchInput",
+              label: "text-white",
+              input: "text-white",
+              inputWrapper: "bg-default-100"
+            }}
+            isClearable
+            onClear={() => {
+              setSearchQuery("");
+              setPage(1);
+            }}
+          />
+        </div>
+
+        <div className="priceFilterContainer">
+          <Input
+            type="number"
+            label="Min Price (CAD $)"
+            placeholder="0.00"
+            value={minPrice}
+            onValueChange={(value) => {
+              setMinPrice(value);
+              setPage(1);
+            }}
+            classNames={{
+              base: "priceInput",
+              label: "text-white",
+              input: "text-white",
+              inputWrapper: "bg-default-100"
+            }}
+            startContent={
+              <div className="pointer-events-none flex items-center">
+                <span className="text-default-400 text-small">$</span>
+              </div>
+            }
+          />
+
+          <Input
+            type="number"
+            label="Max Price (CAD $)"
+            placeholder="999.99"
+            value={maxPrice}
+            onValueChange={(value) => {
+              setMaxPrice(value);
+              setPage(1);
+            }}
+            classNames={{
+              base: "priceInput",
+              label: "text-white",
+              input: "text-white",
+              inputWrapper: "bg-default-100"
+            }}
+            startContent={
+              <div className="pointer-events-none flex items-center">
+                <span className="text-default-400 text-small">$</span>
+              </div>
+            }
+          />
+        </div>
+
+        <div className="filterStats">
+          <p className="text-white">Showing {filteredItems.length} card{filteredItems.length !== 1 ? 's' : ''}</p>
+        </div>
       </div>
 
       <div className="tableSection">

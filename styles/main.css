@@ -82,6 +82,48 @@
     opacity: 1;
 }
 
+.filterSection {
+    background-color: #1a1a1a;
+    padding: 3vh;
+    margin-top: 2vh;
+    margin-left: 2vh;
+    margin-right: 2vh;
+    border-radius: 2vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.searchBarContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.searchInput {
+    max-width: 600px;
+    width: 100%;
+}
+
+.priceFilterContainer {
+    display: flex;
+    justify-content: center;
+    gap: 2vh;
+    flex-wrap: wrap;
+}
+
+.priceInput {
+    max-width: 250px;
+    width: 100%;
+}
+
+.filterStats {
+    text-align: center;
+    font-size: 16px;
+    color: #468dff;
+    font-weight: bold;
+}
+
 
 
 
